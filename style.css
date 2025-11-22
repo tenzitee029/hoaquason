@@ -1,0 +1,438 @@
+/* --- BIẾN VÀ THIẾT LẬP CHUNG CHUYÊN NGHIỆP HƠN --- */
+:root {
+    --bg-dark: #1a1a1a;        /* Nền tối */
+    --bg-light: #ffffff;       /* Nền sáng */
+    --primary-color: #ffffff;  /* Màu chữ chính trên nền tối */
+    --secondary-color: #333333;/* Màu nền phụ */
+    --accent-color: #00ff66;   /* Màu nhấn: Xanh lá/Vàng chanh neon */
+    --text-color-dark: #b0b0b0;/* Màu chữ phụ trên nền tối */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    background-color: var(--bg-dark); /* Nền tối tổng thể */
+    margin: 0;
+    line-height: 1.7;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* --- HERO SECTION (Nâng cấp thẩm mỹ lần 2) --- */
+.hero {
+    background: var(--bg-dark);
+    padding: 180px 0; /* Tăng padding để tạo khoảng trống (whitespace) */
+    text-align: center;
+    border-bottom: 8px solid var(--accent-color); /* Tăng độ dày viền */
+    position: relative;
+}
+
+/* KHẨU HIỆU MỚI: Màu nhấn neon */
+.hero-tagline {
+    font-family: var(--font-body);
+    font-size: 1.2em; 
+    font-weight: 600;
+    color: var(--accent-color); /* Màu nhấn */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    opacity: 0.8; 
+}
+
+.hero-title {
+    font-size: 5.5em; /* Kích thước vẫn giữ nguyên */
+    font-weight: 900; 
+    letter-spacing: 5px; 
+    margin-bottom: 20px;
+    
+    background: linear-gradient(90deg, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Đổ bóng chữ neon cực kỳ ấn tượng */
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.5), /* Bóng trắng mềm */
+        0 0 30px var(--accent-color); /* Bóng neon mạnh hơn */
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.5em; 
+    font-weight: 400;
+    color: var(--text-color-dark);
+    max-width: 800px;
+    margin: 0 auto 50px; 
+}
+
+/* Điều chỉnh riêng nút CTA trong Hero để trông mạnh mẽ hơn */
+.hero-btn {
+    padding: 18px 50px; 
+    font-size: 1.1em;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.5); 
+    cursor: pointer;
+}
+
+.btn-cta:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 255, 102, 0.8);
+}
+
+/* --- VISION & CULTURE SECTION --- */
+.vision-section {
+    background-color: var(--bg-dark);
+    text-align: center;
+}
+
+.vision-section h2 {
+    margin-bottom: 70px;
+    font-size: 2.2em;
+}
+
+.values-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.value-card {
+    background: var(--secondary-color);
+    padding: 40px;
+    border-radius: 12px;
+    flex: 1;
+    max-width: 350px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    background: #3c3c3c;
+}
+
+.value-card i {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+}
+
+.value-card p {
+    color: var(--text-color-dark);
+}
+
+
+/* --- THE TEAM SECTION (Phần nền hơi sáng hơn) --- */
+.team-section {
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.team-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.member-card {
+    background: var(--bg-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+.member-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 255, 102, 0.2); 
+    border: 1px solid var(--accent-color);
+}
+
+.member-photo-frame {
+    width: 100%;
+    height: 350px; 
+    background-color: var(--secondary-color); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    position: relative; 
+    border-bottom: 3px solid var(--accent-color); 
+}
+
+.member-photo {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+    filter: grayscale(80%); 
+    transition: filter 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.member-card:hover .member-photo {
+    filter: grayscale(0%); 
+    transform: scale(1.05); 
+}
+
+.member-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.member-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+    font-size: 1.4em;
+}
+
+.member-info .role {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.btn-detail {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.btn-detail:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+/* --- CLOSING SECTION --- */
+.closing-section {
+    background-color: var(--bg-dark); 
+    padding: 80px 0 100px 0;
+    text-align: center;
+    border-top: 5px solid var(--accent-color);
+}
+
+.closing-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.group-photo-container {
+    max-width: 350px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 4px solid var(--accent-color); 
+}
+
+.group-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease-out;
+}
+
+.group-photo-container:hover .group-photo {
+    transform: scale(1.02);
+}
+
+.closing-message {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    font-size: 1.2em;
+    color: var(--text-color-dark);
+}
+
+.closing-btn {
+    text-transform: uppercase;
+}
+
+
+/* --- MODAL STYLES (Hoàn chỉnh) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); 
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.modal.open {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--secondary-color); 
+    border: 1px solid var(--accent-color);
+    margin: 5% auto; 
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px; 
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    box-shadow: 0 10px 40px rgba(0, 255, 102, 0.4); 
+}
+
+.modal.open .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    color: var(--text-color-dark);
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* KHU VỰC CHI TIẾT TRONG MODAL */
+#modal-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--primary-color); 
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.8), 
+                0 0 0 3px var(--accent-color); 
+}
+
+#modal-details h3 {
+    color: var(--primary-color); 
+    margin-top: 10px;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+#modal-details .modal-role {
+    color: var(--accent-color); 
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+#modal-details p {
+    color: var(--text-color-dark);
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center; 
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.modal-links {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--bg-dark); 
+}
+
+.modal-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.modal-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 15px rgba(0, 255, 102, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3em;
+    }
+    .hero-subtitle {
+        font-size: 1em;
+    }
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .value-card {
+        max-width: 100%;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .modal-content {
+        margin: 10% auto;
+    }
+}
